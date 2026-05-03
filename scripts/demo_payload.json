@@ -1,0 +1,8 @@
+{
+  "project_name": "研发提效多 Agent Demo",
+  "requirement": "我们要构建一个面向研发提效的多 Agent 协作系统，覆盖需求理解、任务拆解、代码审查、测试生成和上线风险检查。系统需要支持知识库检索，能引用项目规范和历史缺陷；需要将 PRD 自动拆解为 Jira 风格任务；需要扫描代码中的硬编码密钥、SQL 拼接和缺少测试等问题。目标是减少人工需求拆解、Review 和测试准备时间，提升交付质量，并为后续接入 CI/CD 留出 API。",
+  "repository_snapshot": {
+    "service.py": "API_KEY = 'sk-demo-hardcoded-secret'\n\ndef get_user(user_id, conn):\n    sql = f\"SELECT * FROM users WHERE id = {user_id}\"\n    print(sql)\n    try:\n        return conn.execute(sql)\n    except Exception:\n        return None\n",
+    "README.md": "# Demo service\nTODO: add test and deployment docs\n"
+  }
+}

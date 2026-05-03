@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Dev Agent Suite</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Multi-Agent Developer Productivity</p>
+        <h1>研发提效多 Agent 系统</h1>
+        <p class="subtitle">需求理解、任务拆解、代码审查、测试生成、知识库检索和上线风险评估，一次运行完成闭环。</p>
+      </div>
+      <button id="runBtn">运行 Agent</button>
+    </section>
+    <section class="grid">
+      <div class="card input-card">
+        <label for="projectName">项目名称</label>
+        <input id="projectName" value="研发提效多 Agent Demo" />
+        <label for="requirement">需求 / PRD / 项目描述</label>
+        <textarea id="requirement" rows="11"></textarea>
+        <label for="repoSnapshot">代码快照 JSON，key 为文件名，value 为代码内容</label>
+        <textarea id="repoSnapshot" rows="10"></textarea>
+      </div>
+      <div class="card result-card">
+        <div class="result-header"><h2>运行结果</h2><span id="status">等待运行</span></div>
+        <div id="summary" class="summary empty">点击「运行 Agent」查看结果。</div>
+        <div id="metrics" class="metrics"></div>
+      </div>
+    </section>
+    <section id="agentCards" class="agent-cards"></section>
+    <section class="card raw-card"><h2>Raw JSON</h2><pre id="rawJson">{}</pre></section>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>

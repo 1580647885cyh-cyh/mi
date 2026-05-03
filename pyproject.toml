@@ -1,0 +1,25 @@
+[project]
+name = "ai-dev-agent-suite"
+version = "0.1.0"
+description = "Local-first multi-agent system for developer productivity — requirement analysis, task planning, code review, test generation, RAG, and release risk assessment."
+requires-python = ">=3.10"
+license = {text = "MIT"}
+keywords = ["ai", "agent", "developer-tools", "code-review", "rag", "productivity", "multi-agent"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+]
+
+[project.urls]
+Homepage = "https://github.com/1580647885cyh-cyh/mi"
+Repository = "https://github.com/1580647885cyh-cyh/mi"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
