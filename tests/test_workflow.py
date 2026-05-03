@@ -11,7 +11,7 @@ def test_workflow_returns_structured_results():
     assert result["run_id"]
     assert "requirement_agent" in result["results"]
     assert "code_review_agent" in result["results"]
-    assert result["estimated_impact"]["estimated_minutes_saved_per_run"] > 0
+    assert result["executive_summary"]
 
 
 def test_code_review_detects_secret_and_sql():

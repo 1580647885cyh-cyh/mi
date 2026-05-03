@@ -46,10 +46,13 @@ async function runAgents() {
 function renderResult(data) {
   summaryEl.textContent = data.executive_summary;
   rawJsonEl.textContent = JSON.stringify(data, null, 2);
-  const impact = data.estimated_impact || {};
-  const metrics = [['节省分钟/次', impact.estimated_minutes_saved_per_run], ['效率提升', `${impact.efficiency_gain_percent}%`], ['基准分钟', impact.manual_baseline_minutes], ['处理 Token', impact.estimated_tokens_processed]];
-  metricsEl.innerHTML = metrics.map(([label, value]) => `<div class="metric"><strong>${value ?? '-'}</strong><span>${label}</span></div>`).join('');
   const results = data.results || {};
+  const taskCount = results.task_planner_agent?.metrics?.task_count ?? '-';
+  const findingCount = results.code_review_agent?.metrics?.finding_count ?? '-';
+  const riskScore = results.release_risk_agent?.metrics?.risk_score ?? '-';
+  const refCount = results.rag_knowledge_agent?.metrics?.reference_count ?? '-';
+  const metrics = [['任务拆解数', taskCount], ['发现问题', findingCount], ['风险分', riskScore], ['知识库命中', refCount]];
+  metricsEl.innerHTML = metrics.map(([label, value]) => `<div class="metric"><strong>${value}</strong><span>${label}</span></div>`).join('');
   cardsEl.innerHTML = Object.entries(results).map(([name, result]) => agentCard(name, result)).join('');
 }
 

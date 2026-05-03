@@ -11,9 +11,6 @@
 
 > English | [中文](#中文)
 
-<!-- TODO: add a screenshot/GIF showing the Web UI in action -->
-<!-- ![demo](docs/demo.gif) -->
-
 ## Features
 
 - **Requirement Agent** — extracts goals, features, acceptance criteria, and open questions from PRD/user descriptions
@@ -79,9 +76,8 @@ curl -X POST http://127.0.0.1:8000/api/run \
           └───────────────┴──────────────────┴───────────┘
                                  │
                    ┌─────────────▼───────────────┐
-                   │  Structured JSON Output      │
-                   │  + Executive Summary         │
-                   │  + Estimated Impact Metrics  │
+                   │      Structured JSON Output    │
+                   │      + Executive Summary       │
                    └─────────────────────────────┘
 ```
 

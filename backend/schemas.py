@@ -58,7 +58,6 @@ class WorkflowOutput:
     input_preview: str
     results: Dict[str, Dict[str, Any]]
     executive_summary: str
-    estimated_impact: Dict[str, Any]
 
     def to_dict(self) -> Dict[str, Any]:
         return asdict(self)
